@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="tellUserHi()">click</button>
+    <div id="showResult"></div>
+
+    <input placeholder="input celsius value" type="text" id="input1">
+    <button onclick="cen()">generate</button>
+</body>
+</html>
+<script>
+
+    function name(params) {
+        console.log(`hello ${params}`);
+        
+    }
+    name('people')
+    name('everyone')
+    name('brethens')
+
+    function number(num1, num2) {
+        console.log(num1 + num2)
+    }
+    number( 3 , 5)
+    number(765,778)
+
+
+   
+    function tellUserHi(arg1) {
+         let input = document.getElementById('input')
+         let display = document.getElementById('showResult')
+         if (input.value.trim() == '') {
+            alert('input your name ')
+         }else{
+            alert(value(input.value)) 
+         } 
+       
+ 
+    }
+
+    function value(params) {
+        return(`hello ${params}`)
+        
+    }
+
+    function cen(cal) {
+        let input1 = document.getElementById('input1').value;
+        let f = (input1 * (9/5))+32
+      console.log( f );
+      
+    }
+    cen(90)
+    cen(110)
+
+    
+    function eat(food) {
+        return function name() {
+            return `i am eatind ${food}`
+        }
+    }
+    console.log(eat('beans')());
+
+    let nothing = 0n
+
+    console.log(typeof 0n)
+    console.log(nothing)
+
+    if(nothing){ 'false'}
+    
+
+ </script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let pi = Math.PI
+    console.log(pi);
+    console.log(Math.round(4.6999));
+    
+    let value = Math.min(-5,6,7,3,8)
+    let otherValue = Math.max(-5,6,7,3,8)
+    console.log(value);
+    console.log(otherValue);
+
+    let random = Math.floor(Math.random()*11)
+    console.log(random);
+    
+    // foreach, map ,some ,every ,find ,findindex ,filter, reduce 
+    let arr1 = [1, 2, 3, 4, 5]
+    // in the function for foreach it contain three argument first is the no in lengt and the second is the index and the third is the complete array
+    arr1.forEach(function (num, i,arr) {
+        console.log(num);
+        
+    })
+   console.log( arr1.map(function (num, i,arr) {
+        return num * 2
+    }));
+   let someArrFunc = arr1.some(function(num, i ,arr){
+    return typeof num === 'string'
+   })
+   console.log(someArrFunc);
+   let areTheyAllString = arr1.some(function(num, i ,arr){
+    return typeof num === 'string'
+   })
+    console.log(areTheyAllString);
+    
+   let find5 = arr1.find(function(num, i ,arr){
+    return num === 5
+   })
+   console.log(find5);
+   let findIndex5 = arr1.findIndex(function(num, i ,arr){
+    return num === 5
+   })
+   console.log(findIndex5);
+</script>

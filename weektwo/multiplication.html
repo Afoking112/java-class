@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" type="number">
+    <input id="input2" type="number">
+    <button id="click" onclick="button()">cal</button>
+    <div id="display">f</div>
+</body>
+</html>
+<script>function button() {
+     let input1 = document.getElementById('input1').value;
+    let input2 = document.getElementById('input2').value;
+    let butClick = document.getElementById('click')
+    let display = document.getElementById('display')
+    
+    for (let i = 0; i <= 12 ; i++) {
+        display = `${input1 * i} = `
+        
+    }
+}
+
+   
+
+
+</script>

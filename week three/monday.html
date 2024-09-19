@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="text" name="" id="input2">
+    <button onclick="createTimetable()">create</button>
+    <div id="preview"></div>
+</body>
+</html>
+<script>
+let input1 = document.getElementById('input1').value;
+let input2 = document.getElementById('input2').value;
+let preview = document.getElementById('preview')
+    function createTimetable(){
+        if(input1 === '' || input2 === ''){
+            alert('all field are mandatory')
+            // console.log(him);
+            
+            return 
+            
+        }
+
+        if (input1 <0 || input2 <0){
+            alert('the value can not be negative')
+            return
+        }
+
+        preview.innerHTML = ''
+        if(input1 > input2){
+            for (let index = input1; index <= input2; index--){
+                 for(i = 0; i <= 13; i--){
+                  let answer = index * i
+                  console.log(answer);
+                  
+                }
+        }
+
+    }
+
+        
+        
+        
+    }
+</script>

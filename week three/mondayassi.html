@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="text()">check</button>
+    <div id="display"></div>
+
+</body>
+</html>
+<script>
+    function text(){
+        let input = document.getElementById('input').value;
+let display = document.getElementById('display')
+
+switch (input.toLowerCase()) {
+    case 'january':
+    case 'march':
+    case 'may':
+    case 'july':
+    case 'august':
+    case 'october':
+    case 'december':
+    display.innerHTML = `this month has 31 days`;
+        break;
+        case 'september':
+    case 'april':
+    case 'june':
+    case 'november':
+    display.innerHTML = `this month has 30 days`;
+    break;
+    case 'febuary':
+    display.innerHTML = `this month has 28 and 29 days in leap year`;
+        break;
+    default:alert('invalid input')
+        break;
+}
+    }
+
+</script>

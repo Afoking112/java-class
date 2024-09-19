@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <input id="input" type="text" >
+    <button id="click" onclick="addTodo()">Add</button>
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+    function addTodo() {
+        let input = document.getElementById('input').value.trim();
+        if (input === '') {
+            alert('Please enter a todo item.');
+            return;
+        }
+
+        let display = document.getElementById('display');
+
+        let todoHtml = `
+            <div class="todo-item">
+                ${input}
+                <button class="delete-button" onclick="deleteTodo(this)">Delete</button>
+            </div>
+        `;
+
+        display.innerHTML += todoHtml;
+        document.getElementById('input').value = '';
+    }
+
+    function deleteTodo(button) {
+        button.parentElement.remove();
+    }
+</script>
