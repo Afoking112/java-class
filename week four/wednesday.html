@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wednesday3</title>
+</head>
+<body id="wel">
+    <h1 onclick="run(event)">help me run</h1>
+    <p id="pTag"></p>
+    <button onclick="signUp(event)">sign up</button>
+    <button id="jump"> jump</button>
+    <button id="dark">dark/light</button>
+</body>
+</html>
+<script>
+    function run(ev) {
+        console.log(ev); 
+        pTag.innerHTML = 'i am runing'
+        
+    }
+    let a = 25
+   let wowTimeOut = setTimeout(() =>{
+    if ( a === 25){
+        clearTimeout(wowTimeOut)
+        return
+    }
+        console.log('wow!!');
+        
+    }, 3000)
+
+    function signUp(ev){
+        ev.target.innerText = 'loading..!! '
+        ev.target.disabled = true
+        setTimeout(() =>{
+        ev.target.innerText = 'sign up'
+            alert('welcome')
+        ev.target.disabled = false
+
+        }, 5000)
+    }
+
+    document.querySelector('#jump').addEventListener('click',()=>{
+        body
+    })
+
+    let lit = true
+    document.querySelector('#dark').addEventListener('click',(da)=>{
+        lit = !lit
+   let light =  document.body
+        if (light.style.backgroundColor ='black'  ){
+            light.style.backgroundColor = 'black'
+            light.style.color = 'white'
+     }else {
+               light.style.backgroundColor = 'white'
+            light.style.color = 'black'
+        }
+        
+    })
+</script>

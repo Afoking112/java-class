@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #all{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(22, 22, 22);
+        }
+        h2{
+            position: absolute;
+            left: 140px;
+            font-style: oblique;
+        }
+        #center{
+            width: 350px;
+            height: 400px;
+            background:linear-gradient(rgb(91, 224, 91),rgb(44, 43, 43),rgb(54, 53, 53)) ;
+            border: 1px solid white;
+            position: relative;
+            margin-left: 500px;
+            top: 200px;
+            border-top: 3px solid white;
+            border-radius: 10px;
+            box-shadow: 3px 1px 3px 3px rgb(139, 138, 138);
+        }
+        #text{
+            position: absolute;
+            display: block;
+            top: 60px;
+            left: 20px;
+        }
+        #text input{
+            display: block;
+            width: 250px;
+            height: 30px;
+            border-radius: 10px;
+            outline-color: rgb(148, 154, 152);
+            border: 0;
+            background-color: rgb(72, 68, 68);
+            padding: 0 0 0 9px;
+        }
+        #see{
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            left: 10px;
+        }
+        button{
+            background-color: rgb(130, 120, 120);
+            width: 70px;
+            height: 30px;
+            right: 0;
+            position: absolute;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="center">
+            <h2>SIGN UP</h2>
+            <div id="text">
+                <input type="text" id="input" placeholder="Enter your First" ><br>
+                <input required type="text" id="input1" placeholder="Enter your Second name"><br>
+                <input  type="text" id="input2" placeholder="Enter your Last name"  required><br>
+                <input type="text" id="input3" placeholder="Enter prefered username" required><br>
+                <input type="text" id="Password" placeholder="Enter your Password" required ><br>
+                <input type="text" id="ConPassword" placeholder="Confirm your Password" required><br>
+             <button onclick="signUp()">Sign up</button> 
+            </div>
+            <div id="see"><input type="checkbox" name="Term" id="Check"><p id="Term">agree to the <b>Term and condition</b></p></div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+   let arr =[]
+    function signUp(){
+        let inputs = document.getElementById('input').value;
+        let inputs1 = document.getElementById('input1').value;
+        let inputs2 = document.getElementById('input2').value;
+        let inputs3 = document.getElementById('input3').value;
+        let passWord = document.getElementById('Password').value;
+        let conpassWord = document.getElementById('ConPassword').value;
+        let checkBox = document.getElementById('Check').checked;
+        let term = document.getElementById('Term')
+
+        // checkBox = false
+        if(inputs.trim() === '' ||inputs1.trim() === '' ||inputs2.trim() === '' ||inputs3.trim() === ''){
+            alert('All field are mandatory')
+            return
+        }else if(passWord != conpassWord || passWord.lenght === 8){
+            alert('The passorwd and Confirm Password are not the same')
+            return
+        }else if(checkBox === false){
+            alert('confirm the term before proceding')
+            term.style.color = 'red'
+        }else{
+            alert('Login sucessfully')
+            term.style.color = 'black'
+
+        }
+      let allObject = {Firstname:inputs , secondname:inputs1, Lastname:inputs2 , Username:inputs3,
+        password:passWord
+      }
+      arr.push(allObject)
+      allObject = JSON.stringify()
+        localStorage.setItem('session', arr)
+        console.log(arr);
+        
+    }
+</script>

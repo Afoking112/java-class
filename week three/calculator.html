@@ -208,6 +208,7 @@
             const result = eval(displayValue);
             document.getElementById("display").value = result;
             displayValue = result.toString();
+            
         } catch (error) {
             document.getElementById("display").value = "Error"
         }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text" oninput="showThis()">
+    <button id="shoe">Shoe</button>
+    <button id="bag">Bag</button>
+</body>
+</html>
+<script>
+
+
+    function showThis(){
+        let input = document.getElementById('input').value.trim().toLowerCase();
+        let shoe = document.getElementById('shoe')
+        let bag = document.getElementById('bag')
+        input = input.trim()
+        if (input == 'shoe'){
+            bag.style.display = 'none'
+            shoe.style.display = 'block'
+        } else if(input == 'bag'){
+            shoe.style.display = 'none'
+            bag.style.display = 'block'
+        }
+
+    }
+   
+
+</script>
